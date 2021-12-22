@@ -1,18 +1,16 @@
 .App {
   text-align: center;
+  max-height: 100%;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+// ____________________________________________
+
+.card-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
-// ____________________________________________
 
 .Search {
   display: flex;
@@ -83,7 +81,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background-color: #e7e9f0;
 }
 
@@ -92,6 +89,7 @@ ul {
 }
 
 button {
+  font-size: larger;
   font-family: inherit;
   border: none;
   background: transparent;
@@ -99,16 +97,20 @@ button {
 }
 
 .card {
-  background: #fff;
+  max-width: 90vw;
+  overflow: auto;
+  background: rgba(89, 164, 235, 0.507);
   width: 500px;
   display: flex;
   align-items: center;
   border-radius: 30px;
   padding: 32px;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 
   &__info {
     &__place {
-      font-size: 14px;
+      font-size: 20px;
       color: var(--primary-light);
     }
 

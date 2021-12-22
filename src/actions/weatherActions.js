@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const CHANGE_CITY = 'change_city';
 export const CHANGE_WEATHER = 'change_weather';
+export const ADD_CARD = 'add_card';
 
 export const changeCity = (city) => {
   return (dispatch) => {
@@ -17,14 +18,24 @@ export const getWeatherByCity = (city) => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiid}`
       )
       .then((response) => {
+        console.log(response.data);
         dispatch({
-          type: CHANGE_CITY,
-          payload: { city: response.data.name },
+          type: ADD_CARD,
+          payload: {
+            city: response.data.name,
+            iconCode: response.data.weather[0].icon,
+            weather: response.data.main.temp,
+            timezone: response.data.timezone,
+          },
         });
-        dispatch({
-          type: CHANGE_WEATHER,
-          payload: { weather: response.data.main },
-        });
+        // dispatch({
+        //   type: CHANGE_CITY,
+        //   payload: { city: response.data.name },
+        // });
+        // dispatch({
+        //   type: CHANGE_WEATHER,
+        //   payload: { weather: response.data.main },
+        // });
       })
       .catch((err) => console.log('not valid city', err));
   };

@@ -11,11 +11,15 @@ export default function SearchBar() {
     setCity(target.value);
   };
 
-  const handleSearch = () => dispatch(changeCity(city));
+  const handleAdd = () => {
+    dispatch(changeCity(city));
+    setCity('');
+  };
 
   return (
     <div className="Search">
       <input
+        value={city}
         type="text"
         className="Searchbar"
         placeholder="Search"
@@ -23,10 +27,10 @@ export default function SearchBar() {
       />
       <button
         onClick={() => {
-          handleSearch();
+          handleAdd();
         }}
       >
-        🔎
+        ➕
       </button>
     </div>
   );
