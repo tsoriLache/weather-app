@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+// ____________________________________________
+
+.Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+}
+
+button {
+  margin: 0.3rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: #3b3d54;
+  color: white;
+  border: none;
+  outline: none;
+  transition: background 0.1s ease-in-out;
+}
+
+.Searchbar:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+button:hover {
+  background: #4c4f69;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 0.2rem 1rem;
+  border-radius: 15px;
+  background: #3b3d54;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+}
+
+/* ___________ */
+:root {
+  --font-body: Poppins, sans-serif;
+  --secondary: #eef7fe;
+  --primary: #22215b;
+  --primary-light: #2f2f31;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: var(--font-body);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e7e9f0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.card {
+  background: #fff;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  padding: 32px;
+
+  &__info {
+    &__place {
+      font-size: 14px;
+      color: var(--primary-light);
+    }
+
+    &__time {
+      font-size: 30px;
+      color: var(--primary);
+    }
+
+    &__date {
+      font-size: 14px;
+      color: var(--primary-light);
+    }
+  }
+
+  &__weather {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__temp {
+      font-size: 30px;
+    }
+
+    &__icon {
+      animation: move 1s infinite alternate ease-in-out;
+    }
+  }
+}
+
+@keyframes move {
+  to {
+    transform: translateY(-10px);
+  }
+}
