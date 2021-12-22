@@ -1,17 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function WeatherCard() {
+  const city = useSelector((state) => state.city);
+  const weather = useSelector((state) => state.weather);
   return (
-    <div class="card">
-      <div class="card__info">
-        <p class="card__info__place">New Delhi</p>
-        <p class="card__info__time">06:20 AM</p>
-        <p class="card__info__date">Novemaber 10.2020 | Wednesday</p>
+    <div className="card">
+      <div className="card__info">
+        <p className="card__info__place">{city}</p>
+        <p className="card__info__time">06:20 AM</p>
+        <p className="card__info__date">Novemaber 10.2020 | Wednesday</p>
       </div>
-      <div class="card__weather">
+      <div className="card__weather">
         <svg
           width="34"
-          class="card__weather__icon"
+          className="card__weather__icon"
           height="24"
           viewBox="0 0 34 24"
           fill="none"
@@ -23,7 +26,7 @@ export default function WeatherCard() {
           />
         </svg>
 
-        <p class="card__weather__temp">18° C</p>
+        <p className="card__weather__temp">{weather.main.temp}° C</p>
       </div>
     </div>
   );
