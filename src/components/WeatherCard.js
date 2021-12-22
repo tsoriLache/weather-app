@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 export default function WeatherCard() {
   const city = useSelector((state) => state.city);
+  console.log(city);
   const weather = useSelector((state) => state.weather);
   return (
     <div className="card">
@@ -26,7 +27,7 @@ export default function WeatherCard() {
           />
         </svg>
 
-        <p className="card__weather__temp">{weather.main.temp}° C</p>
+        <p className="card__weather__temp">{weather}° C</p>
       </div>
     </div>
   );

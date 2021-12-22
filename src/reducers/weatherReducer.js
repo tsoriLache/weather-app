@@ -1,11 +1,13 @@
-const initialState = { main: { temp: '{temp}' } };
+import { CHANGE_WEATHER } from '../actions/weatherActions';
 
-const weatherReducer = (weather = initialState, { type, payload }) => {
+const initialState = '';
+
+const weatherReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case 'CHANGE_WEATHER':
-      return payload.city;
+    case CHANGE_WEATHER:
+      return payload.weather.temp;
     default:
-      return weather;
+      return state;
   }
 };
 

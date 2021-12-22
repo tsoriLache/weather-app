@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { changeCity } from '../actions/weatherActions';
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -10,8 +11,7 @@ export default function SearchBar() {
     setCity(target.value);
   };
 
-  const handleSearch = () =>
-    dispatch({ type: 'CHANGE_WEATHER', payload: { city } });
+  const handleSearch = () => dispatch(changeCity(city));
 
   return (
     <div className="Search">

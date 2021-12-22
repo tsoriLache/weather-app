@@ -1,13 +1,12 @@
-const initialState = '{city-name}';
+import { CHANGE_CITY } from '../actions/weatherActions';
+const initialState = '{city}';
 
-const cityReducer = (city = initialState, { type, payload }) => {
-  switch (type) {
-    case 'CHANGE_CITY':
-      return payload.city;
-    // case 'REMOVE_CITY':
-    //   return cities.filter((city) => city !== payload.city);
+const cityReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case CHANGE_CITY:
+      return action.payload.city;
     default:
-      return city;
+      return state;
   }
 };
 
